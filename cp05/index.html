@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melodia: Sua Música, Sua Forma | Landing Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJc5n/BpQWlEAAQv2z9E1J7V9kR/g5A8O35d79tC0qT9N/6Vf6g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'melodia-pink': '#EC4899',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+        
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
+</head>
+
+<body class="font-sans bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors-theme">
+
+    <header id="navbar" class="fixed top-0 w-full z-50 backdrop-blur-sm bg-white/90 dark:bg-gray-900/90 shadow-lg dark:shadow-xl transition-all duration-300 ease-in-out">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="#" class="text-2xl font-bold text-melodia-pink">Melodia</a>
+                
+                <div class="flex items-center space-x-6">
+                    <div class="hidden md:flex space-x-8">
+                        <a href="#apresentacao" class="text-gray-700 dark:text-gray-300 hover:text-melodia-pink dark:hover:text-melodia-pink transition duration-150">Benefícios</a>
+                        <a href="#funcionalidades" class="text-gray-700 dark:text-gray-300 hover:text-melodia-pink dark:hover:text-melodia-pink transition duration-150">Funcionalidades</a>
+                        <a href="#depoimentos" class="text-gray-700 dark:text-gray-300 hover:text-melodia-pink dark:hover:text-melodia-pink transition duration-150">Depoimentos</a>
+                        <a href="#contato" class="text-gray-700 dark:text-gray-300 hover:text-melodia-pink dark:hover:text-melodia-pink transition duration-150">Contato</a>
+                    </div>
+
+                    <button id="theme-toggle" type="button" class="flex items-center space-x-1 p-2 md:p-2.5 rounded-lg text-xs md:text-sm font-semibold text-white bg-melodia-pink hover:bg-pink-700 transition duration-150 focus:outline-none focus:ring-2 focus:ring-melodia-pink focus:ring-offset-2 dark:bg-pink-700 dark:hover:bg-pink-600 dark:text-white">
+                        <i id="theme-icon" class="fas fa-sun md:text-base"></i>
+                        <span id="theme-text"></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="hero" class="pt-24 min-h-screen flex items-center bg-gray-50 dark:bg-gray-900 transition-colors-theme">
+            <div class="container mx-auto px-4 py-16 md:py-0 flex flex-col lg:flex-row items-center justify-between">
+                <div class="lg:w-1/2 text-center lg:text-left mb-12 lg:mb-0">
+                    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight text-gray-900 dark:text-white mb-4">
+                        Melodia: Sua Música, <span class="text-melodia-pink">Sua Forma</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
+                        Qualidade de som superior e playlists personalizadas. A sua jornada de descoberta musical começa aqui.
+                    </p>
+                    <a href="#contato" class="inline-block px-10 py-4 text-lg font-semibold text-white bg-melodia-pink rounded-full hover:bg-pink-700 transition duration-300 shadow-xl shadow-melodia-pink/40">
+                        Ouvir Agora <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <div class="lg:w-5/12">
+                    <div class="bg-gray-200 dark:bg-gray-700 w-full h-80 rounded-2xl shadow-2xl overflow-hidden flex items-center justify-center border-4 border-melodia-pink/50">
+                        <img src="https://tse2.mm.bing.net/th/id/OIP.T_iCzdmmqqqh2oXycjs29AHaFj?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Ícone de Vídeo/Imagem" class="inline-block mr-2"> 
+                    </div>
+                    <p class="text-center mt-4 text-sm text-gray-500 dark:text-gray-400">
+                        Imagem meramente ilustrativa
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="apresentacao" class="py-20">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-4xl font-bold mb-12 text-gray-800 dark:text-gray-200">Por que escolher Melodia?</h2>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+                    <div class="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border-t-4 border-melodia-pink">
+                        <i class="fa-solid fa-tower-broadcast text-4xl text-melodia-pink mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Som Superior</h3>
+                        <p class="text-gray-600 dark:text-gray-400">
+                            Experimente o áudio na mais alta fidelidade.
+                        </p>
+                    </div>
+
+                    <div class="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border-t-4 border-melodia-pink">
+                        <i class="fa-solid fa-list-check text-4xl text-melodia-pink mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Playlists Únicas</h3>
+                        <p class="text-gray-600 dark:text-gray-400">
+                            Crie listas de reprodução que realmente combinam com o seu humor.
+                        </p>
+                    </div>
+                    
+                    <div class="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border-t-4 border-melodia-pink">
+                        <i class="fa-solid fa-magnifying-glass-chart text-4xl text-melodia-pink mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Novas Descobertas</h3>
+                        <p class="text-gray-600 dark:text-gray-400">
+                            Encontre seu próximo artista favorito com recomendações inteligentes.
+                        </p>
+                    </div>
+
+                    <div class="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border-t-4 border-melodia-pink">
+                        <i class="fa-solid fa-laptop-code text-4xl text-melodia-pink mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Interface Clean</h3>
+                        <p class="text-gray-600 dark:text-gray-400">
+                            Navegue com facilidade em um design moderno, limpo e minimalista.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="funcionalidades" class="py-20 bg-gray-50 dark:bg-gray-800 transition-colors-theme">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-4xl font-bold mb-12 text-gray-800 dark:text-gray-200">Funcionalidades Principais</h2>
+                
+                <div class="grid md:grid-cols-2 gap-12 text-left">
+                    <div class="flex items-start p-6 bg-white dark:bg-gray-900 rounded-xl shadow-md">
+                        <i class="fa-solid fa-cloud-arrow-down text-3xl text-melodia-pink mr-4 mt-1"></i>
+                        <div>
+                            <h4 class="text-2xl font-semibold mb-2 text-gray-900 dark:text-white">Modo Offline</h4>
+                            <p class="text-gray-600 dark:text-gray-400">Baixe suas músicas favoritas e ouça sem precisar de conexão com a internet, ideal para viagens e economia de dados.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start p-6 bg-white dark:bg-gray-900 rounded-xl shadow-md">
+                        <i class="fa-solid fa-share-nodes text-3xl text-melodia-pink mr-4 mt-1"></i>
+                        <div>
+                            <h4 class="text-2xl font-semibold mb-2 text-gray-900 dark:text-white">Integração Social</h4>
+                            <p class="text-gray-600 dark:text-gray-400">Compartilhe o que está ouvindo com seus amigos nas redes sociais de forma rápida e intuitiva.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start p-6 bg-white dark:bg-gray-900 rounded-xl shadow-md">
+                        <i class="fa-solid fa-sliders text-3xl text-melodia-pink mr-4 mt-1"></i>
+                        <div>
+                            <h4 class="text-2xl font-semibold mb-2 text-gray-900 dark:text-white">Equalizador Avançado</h4>
+                            <p class="text-gray-600 dark:text-gray-400">Ajuste o som ao seu gosto com nosso equalizador completo e predefinições profissionais.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start p-6 bg-white dark:bg-gray-900 rounded-xl shadow-md">
+                        <i class="fa-solid fa-hand-holding-dollar text-3xl text-melodia-pink mr-4 mt-1"></i>
+                        <div>
+                            <h4 class="text-2xl font-semibold mb-2 text-gray-900 dark:text-white">Áudios Sem Copyright</h4>
+                            <p class="text-gray-600 dark:text-gray-400">Acesso fácil a uma biblioteca de áudios sem direitos autorais para seus projetos criativos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="depoimentos" class="py-20">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-4xl font-bold mb-12 text-gray-800 dark:text-gray-200">O que nossos usuários dizem</h2>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-xl shadow-md border-b-4 border-melodia-pink">
+                        <i class="fa-solid fa-quote-left text-2xl text-melodia-pink mb-4"></i>
+                        <p class="italic mb-4 text-gray-700 dark:text-gray-300">"A qualidade do som é incomparável. Finalmente ouço minhas músicas como se fossem ao vivo!"</p>
+                        <div class="flex items-center justify-center">
+                            <div class="w-10 h-10 bg-gray-300 rounded-full mr-3 border-2 border-melodia-pink"></div>
+                            <p class="font-semibold text-gray-900 dark:text-white">Ana Paula, 23</p>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-xl shadow-md border-b-4 border-melodia-pink">
+                        <i class="fa-solid fa-quote-left text-2xl text-melodia-pink mb-4"></i>
+                        <p class="italic mb-4 text-gray-700 dark:text-gray-300">"Descobri bandas incríveis que eu jamais encontraria em outros apps. O algoritmo de descoberta é genial."</p>
+                        <div class="flex items-center justify-center">
+                            <div class="w-10 h-10 bg-gray-300 rounded-full mr-3 border-2 border-melodia-pink"></div>
+                            <p class="font-semibold text-gray-900 dark:text-white">Marcos F., 19</p>
+                        </div>
+                    </div>
+
+                    <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-xl shadow-md border-b-4 border-melodia-pink">
+                        <i class="fa-solid fa-quote-left text-2xl text-melodia-pink mb-4"></i>
+                        <p class="italic mb-4 text-gray-700 dark:text-gray-300">"O design é super clean! É muito fácil de usar e não tem aquele excesso de elementos visuais."</p>
+                        <div class="flex items-center justify-center">
+                            <div class="w-10 h-10 bg-gray-300 rounded-full mr-3 border-2 border-melodia-pink"></div>
+                            <p class="font-semibold text-gray-900 dark:text-white">Júlia P., 28</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="py-20 bg-melodia-pink dark:bg-pink-900 transition-colors-theme">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-4xl font-bold mb-4 text-white">Receba Nossas Novidades</h2>
+                <p class="text-xl text-pink-100 mb-8">
+                    Cadastre seu e-mail para campanhas futuras e prévias exclusivas.
+                </p>
+                    
+                <form class="max-w-xl mx-auto bg-white dark:bg-gray-800 p-8 rounded-xl shadow-2xl">
+                    <div class="mb-4">
+                        <input type="text" placeholder="Seu Nome" class="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-melodia-pink dark:bg-gray-700 dark:text-white" required>
+                    </div>
+                    <div class="mb-6">
+                        <input type="email" placeholder="Seu Melhor E-mail" class="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-melodia-pink dark:bg-gray-700 dark:text-white" required>
+                    </div>
+                    <button type="submit" class="w-full py-3 text-lg font-semibold text-melodia-pink bg-white border-2 border-melodia-pink rounded-lg hover:bg-melodia-pink hover:text-white transition duration-300 shadow-lg">
+                        Quero Fazer Parte!
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-10 bg-gray-900 dark:bg-black text-gray-400">
+        <div class="container mx-auto px-4 text-center">
+            <p class="mb-4">&copy; 2024 Melodia App. Todos os direitos reservados.</p>
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="#" class="hover:text-melodia-pink transition duration-150">Termos de Uso</a>
+                <a href="#" class="hover:text-melodia-pink transition duration-150">Política de Privacidade</a>
+                <a href="#contato" class="hover:text-melodia-pink transition duration-150">Contato</a>
+            </div>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-2xl hover:text-melodia-pink transition duration-150"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="text-2xl hover:text-melodia-pink transition duration-150"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" class="text-2xl hover:text-melodia-pink transition duration-150"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+        const themeIcon = document.getElementById('theme-icon');
+        const themeText = document.getElementById('theme-text');
+
+        function updateThemeIcon() {
+            if (htmlElement.classList.contains('dark')) {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+                themeText.textContent = 'claro';
+            } else {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+                themeText.textContent = 'escuro';
+            }
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark');
+            if (htmlElement.classList.contains('dark')) {
+                localStorage.theme = 'dark';
+            } else {
+                localStorage.theme = 'light';
+            }
+            updateThemeIcon();
+        });
+
+        updateThemeIcon();
+
+        const nav = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-xl');
+            } else {
+                nav.classList.remove('shadow-xl');
+            }
+        });
+    </script>
+</body>
+</html>

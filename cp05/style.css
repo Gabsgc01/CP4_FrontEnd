@@ -1,0 +1,22 @@
+.transition-colors-theme {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body::-webkit-scrollbar {
+    width: 8px;
+    background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #EC4899;
+    border-radius: 4px;
+}
+
+body.dark::-webkit-scrollbar-thumb {
+    background-color: #9D174D;
+}
+
+:focus {
+    outline-color: #EC4899;
+    outline-offset: 2px;
+}
